@@ -5,8 +5,8 @@ import { useParams } from 'react-router-dom';
 
 export default function MovieDetails() {
   const [details, setDetails] = useState([]);
-  const [error, setError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  //   const [error, setError] = useState(false);
+  //   const [isLoading, setIsLoading] = useState(false);
 
   const { movieId } = useParams();
 
