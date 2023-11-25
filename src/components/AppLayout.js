@@ -1,15 +1,7 @@
 import { GlobalStyle } from './GlobalStyle';
 import { Toaster } from 'react-hot-toast';
-import { NavLink, Outlet } from 'react-router-dom';
-import styled from 'styled-components';
-
-const StyledLink = styled(NavLink)`
-  color: black;
-
-  &.active {
-    color: orangered;
-  }
-`;
+import { Outlet } from 'react-router-dom';
+import { StyledLink } from './AppLayout.styled';
 
 export const AppLayout = () => {
   return (
