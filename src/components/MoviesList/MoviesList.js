@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-import { ListItem } from './MoviesList.styled';
+import { ListField, ListItem } from './MoviesList.styled';
 import { PiFilmSlateLight } from 'react-icons/pi';
 
 export const MoviesList = ({ data }) => {
   return (
-    <div>
+    <ListField>
       <ul>
         {data.map(({ id, title }) => (
           <ListItem key={id}>
@@ -13,6 +13,6 @@ export const MoviesList = ({ data }) => {
           </ListItem>
         ))}
       </ul>
-    </div>
+    </ListField>
   );
 };

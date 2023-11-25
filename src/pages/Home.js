@@ -31,7 +31,7 @@ export default function Home() {
         <Loader />
       ) : (
         <div>
-          <h1 style={{ marginLeft: 30 }}>
+          <h1 style={{ marginLeft: 30, marginTop: 20 }}>
             Trending today <FcFilmReel />
           </h1>
           <MoviesList data={movies} />

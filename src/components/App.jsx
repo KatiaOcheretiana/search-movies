@@ -2,9 +2,10 @@ import { Route, Routes } from 'react-router-dom';
 import { AppLayout } from './AppLayout';
 import Home from '../pages/Home';
 import Movies from 'pages/Movies';
-import MovieDetails from 'pages/MovieDetails';
+import MovieDetails from 'pages/MovieDetails/MovieDetails';
 import { Cast } from './Cast/Cast';
 import { Reviews } from './Reviews/Reviews';
+import PageNotFound from 'pages/MovieDetails/PageNotFound';
 
 export const App = () => {
   return (
@@ -17,7 +18,7 @@ export const App = () => {
           <Route path="reviews" element={<Reviews />} />
         </Route>
       </Route>
-      <Route path="*" element={<div>HOME</div>} />
+      <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
 };

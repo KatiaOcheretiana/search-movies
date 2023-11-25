@@ -1,4 +1,5 @@
 import { getYear, parse } from 'date-fns';
+import { CommonInfoContent, CommonInfoField } from './MovieInfo.styled';
 
 export const MovieInfo = ({ data }) => {
   const { poster_path, title, vote_average, overview, genres, release_date } =
@@ -10,16 +11,18 @@ export const MovieInfo = ({ data }) => {
   const releaseDate = parse(release_date, 'yyyy-MM-dd', new Date());
   const releaseYear = getYear(releaseDate);
   return (
-    <div>
-      <img src={imageUrl} alt={title} width={200} />
-      <h2>
-        {title} ({releaseYear})
-      </h2>
-      <p>User Score: {score}% </p>
-      <h3>Overview</h3>
-      <p>{overview}</p>
-      <h3>Genres</h3>
-      <p>{genres?.map(item => item.name).join(' ')}</p>
-    </div>
+    <CommonInfoField>
+      <img src={imageUrl} alt={title} width={240} />
+      <CommonInfoContent>
+        <h2>
+          {title} ({releaseYear})
+        </h2>
+        <p>User Score: {score}% </p>
+        <h3>Overview</h3>
+        <p>{overview}</p>
+        <h3>Genres</h3>
+        <p>{genres?.map(item => item.name).join(' ')}</p>
+      </CommonInfoContent>
+    </CommonInfoField>
   );
 };

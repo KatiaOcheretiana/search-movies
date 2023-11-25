@@ -32,7 +32,7 @@ export const SearchBtn = styled.button`
 
   &:hover {
     opacity: 1;
-    background-color: orange;
+    background-color: rgba(10, 102, 202);
   }
 `;
 
@@ -41,7 +41,7 @@ export const SearcInput = styled.input`
   width: 100%;
   font: inherit;
   font-size: 20px;
-  border: 2px solid goldenrod;
+  border: 2px solid rgba(3, 102, 214);
   outline: none;
   padding: 5px 10px;
 

@@ -3,6 +3,9 @@ import { Loader } from 'components/Loader';
 import { MovieInfo } from 'components/MovieInfo/MovieInfo';
 import { useEffect, useState } from 'react';
 import { NavLink, Outlet, useParams } from 'react-router-dom';
+import { AdditionalField, AdditionalItem } from './MovieDetails.styled';
+import { FcInfo } from 'react-icons/fc';
+import { FcReading, FcPortraitMode } from 'react-icons/fc';
 
 export default function MovieDetails() {
   const [details, setDetails] = useState(null);
@@ -32,16 +35,29 @@ export default function MovieDetails() {
       {isLoading && <Loader />}
       {details && <MovieInfo data={details} />}
       {error && <h2>Try to reload this page </h2>}
+      {!isLoading && (
+        <AdditionalField>
+          <p>
+            <FcInfo />
+            Additional information
+          </p>
+          <ul>
+            <AdditionalItem>
+              <NavLink to="cast">
+                <FcPortraitMode />
+                Cast
+              </NavLink>
+            </AdditionalItem>
+            <AdditionalItem>
+              <NavLink to="reviews">
+                <FcReading />
+                Reviews
+              </NavLink>
+            </AdditionalItem>
+          </ul>
+        </AdditionalField>
+      )}
 
-      <p>Additional information</p>
-      <ul>
-        <li>
-          <NavLink to="cast">Cast</NavLink>
-        </li>
-        <li>
-          <NavLink to="reviews">Reviews</NavLink>
-        </li>
-      </ul>
       <Outlet />
     </div>
   );

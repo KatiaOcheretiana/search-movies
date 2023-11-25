@@ -1,15 +1,15 @@
-import { Triangle } from 'react-loader-spinner';
+import { Hourglass } from 'react-loader-spinner';
 
 export const Loader = () => {
   return (
-    <Triangle
-      height="80"
-      width="80"
-      color="#4fa94d"
-      ariaLabel="triangle-loading"
-      wrapperStyle={{}}
-      wrapperClassName=""
+    <Hourglass
       visible={true}
+      height="50"
+      width="50"
+      ariaLabel="hourglass-loading"
+      wrapperStyle={{ margin: 200 }}
+      wrapperClass=""
+      colors={['#306cce', '#72a1ed']}
     />
   );
 };
