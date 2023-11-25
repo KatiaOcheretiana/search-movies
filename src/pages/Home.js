@@ -1,7 +1,8 @@
 import { getTrendingMovies } from 'api';
 import { Loader } from 'components/Loader';
-import { MoviesList } from 'components/TrendingMovies/MoviesList';
+import { MoviesList } from 'components/MoviesList/MoviesList';
 import { useEffect, useState } from 'react';
+import { FcFilmReel } from 'react-icons/fc';
 
 export default function Home() {
   const [movies, setMovies] = useState([]);
@@ -30,7 +31,10 @@ export default function Home() {
         <Loader />
       ) : (
         <div>
-          <h1>Trending today</h1> <MoviesList data={movies} />
+          <h1 style={{ marginLeft: 30 }}>
+            Trending today <FcFilmReel />
+          </h1>
+          <MoviesList data={movies} />
         </div>
       )}
       {error && <h2>Try to reload this page </h2>}

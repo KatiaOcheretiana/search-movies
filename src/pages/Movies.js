@@ -1,7 +1,7 @@
 import { searchMovies } from 'api';
 import { Loader } from 'components/Loader';
 import { Searchbar } from 'components/SearchBar/SearchBar';
-import { MoviesList } from 'components/TrendingMovies/MoviesList';
+import { MoviesList } from 'components/MoviesList/MoviesList';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 

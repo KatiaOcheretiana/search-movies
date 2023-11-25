@@ -16,7 +16,6 @@ export const Reviews = () => {
         setIsLoading(true);
         setError(false);
         const data = await getMoviesReviews(id);
-        console.log(data);
         setReviews(data);
       } catch (error) {
         setError(true);

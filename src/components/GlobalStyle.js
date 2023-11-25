@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  margin: 0;
+  margin: 0 40px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   color: #212121;

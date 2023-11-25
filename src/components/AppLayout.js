@@ -1,23 +1,23 @@
 import { GlobalStyle } from './GlobalStyle';
 import { Toaster } from 'react-hot-toast';
 import { Outlet } from 'react-router-dom';
-import { StyledLink } from './AppLayout.styled';
+import { HeaderField, List, StyledLink } from './AppLayout.styled';
 
 export const AppLayout = () => {
   return (
     <div>
-      <header>
+      <HeaderField>
         <nav>
-          <ul>
+          <List>
             <li>
               <StyledLink to="/">Home</StyledLink>
             </li>
             <li>
               <StyledLink to="/movies">Movies</StyledLink>
             </li>
-          </ul>
+          </List>
         </nav>
-      </header>
+      </HeaderField>
 
       <main>
         <Outlet />

@@ -1,13 +1,16 @@
 import { Link } from 'react-router-dom';
+import { ListItem } from './MoviesList.styled';
+import { PiFilmSlateLight } from 'react-icons/pi';
 
 export const MoviesList = ({ data }) => {
   return (
     <div>
       <ul>
         {data.map(({ id, title }) => (
-          <li key={id}>
+          <ListItem key={id}>
+            <PiFilmSlateLight />
             <Link to={`/movies/${id}`}> {title}</Link>
-          </li>
+          </ListItem>
         ))}
       </ul>
     </div>
