@@ -45,8 +45,8 @@ export default function MovieDetails() {
           <BackLink to={backLinkRef.current.state?.from ?? '/'}>
             <FcUpLeft style={{ width: 40, height: 20, marginTop: 30 }} />
             <LinkText> Go back</LinkText>
-          </BackLink>{' '}
-          <MovieInfo data={details} />{' '}
+          </BackLink>
+          <MovieInfo data={details} />
         </div>
       )}
       {error && <h2>Try to reload this page </h2>}
