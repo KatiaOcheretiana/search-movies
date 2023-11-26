@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import { Info, Item, ReviewsField } from './Reviews.styled';
 import { FcReading } from 'react-icons/fc';
 
-export const Reviews = () => {
+export default function Reviews() {
   const [reviews, setReviews] = useState(null);
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -50,4 +50,4 @@ export const Reviews = () => {
       )}
     </ReviewsField>
   );
-};
+}

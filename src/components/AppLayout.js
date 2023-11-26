@@ -2,6 +2,8 @@ import { GlobalStyle } from './GlobalStyle';
 import { Toaster } from 'react-hot-toast';
 import { Outlet } from 'react-router-dom';
 import { HeaderField, List, StyledLink } from './AppLayout.styled';
+import { Suspense } from 'react';
+import { Loader } from './Loader';
 
 export const AppLayout = () => {
   return (
@@ -20,7 +22,9 @@ export const AppLayout = () => {
       </HeaderField>
 
       <main>
-        <Outlet />
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
       </main>
       <Toaster />
       <GlobalStyle />

@@ -2,7 +2,7 @@ import { searchMovies } from 'api';
 import { Loader } from 'components/Loader';
 import { Searchbar } from 'components/SearchBar/SearchBar';
 import { MoviesList } from 'components/MoviesList/MoviesList';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useSearchParams } from 'react-router-dom';
 
@@ -13,12 +13,27 @@ export default function Movies() {
 
   const [params, setParams] = useSearchParams();
   const queryToSearch = params.get('search') ?? '';
-  console.log(queryToSearch);
 
   const updateSearchItem = newQuery => {
     params.set('search', newQuery);
     setParams(params);
   };
+
+  useEffect(() => {
+    const fetchMoviesList = async () => {
+      try {
+        setIsLoading(true);
+        setError(false);
+        const movies = await searchMovies(queryToSearch);
+        setMovies(movies);
+      } catch (error) {
+        setError(true);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchMoviesList();
+  }, [queryToSearch]);
 
   const handleSearch = async query => {
     try {
@@ -26,6 +41,7 @@ export default function Movies() {
       setIsLoading(true);
       setError(false);
       const movies = await searchMovies(query);
+      updateSearchItem(query);
 
       if (movies.length > 0) {
         setMovies(movies);

@@ -1,11 +1,15 @@
 import { getMoviesDetails } from 'api';
 import { Loader } from 'components/Loader';
 import { MovieInfo } from 'components/MovieInfo/MovieInfo';
-import { useEffect, useState } from 'react';
-import { NavLink, Outlet, useParams } from 'react-router-dom';
-import { AdditionalField, AdditionalItem } from './MovieDetails.styled';
-import { FcInfo } from 'react-icons/fc';
-import { FcReading, FcPortraitMode } from 'react-icons/fc';
+import { useEffect, useRef, useState } from 'react';
+import { NavLink, Outlet, useParams, useLocation } from 'react-router-dom';
+import {
+  AdditionalField,
+  AdditionalItem,
+  BackLink,
+  LinkText,
+} from './MovieDetails.styled';
+import { FcReading, FcPortraitMode, FcUpLeft, FcInfo } from 'react-icons/fc';
 
 export default function MovieDetails() {
   const [details, setDetails] = useState(null);
@@ -13,6 +17,9 @@ export default function MovieDetails() {
   const [isLoading, setIsLoading] = useState(false);
 
   const { movieId } = useParams();
+
+  const location = useLocation();
+  const backLinkRef = useRef(location);
 
   useEffect(() => {
     const searchDetails = async id => {
@@ -33,8 +40,17 @@ export default function MovieDetails() {
   return (
     <div>
       {isLoading && <Loader />}
-      {details && <MovieInfo data={details} />}
+      {details && (
+        <div>
+          <BackLink to={backLinkRef.current.state?.from ?? '/'}>
+            <FcUpLeft style={{ width: 40, height: 20, marginTop: 30 }} />
+            <LinkText> Go back</LinkText>
+          </BackLink>{' '}
+          <MovieInfo data={details} />{' '}
+        </div>
+      )}
       {error && <h2>Try to reload this page </h2>}
+
       {!isLoading && (
         <AdditionalField>
           <p>

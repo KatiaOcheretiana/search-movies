@@ -5,7 +5,7 @@ import {
   SearchForm,
 } from './SearchBar.styled';
 
-export const Searchbar = ({ onSubmit, search, onChange }) => {
+export const Searchbar = ({ onSubmit }) => {
   return (
     <SearchField>
       <SearchForm
@@ -16,8 +16,6 @@ export const Searchbar = ({ onSubmit, search, onChange }) => {
         }}
       >
         <SearcInput
-          value={search}
-          onChange={e => onChange(e.target.value)}
           name="itemToSearch"
           required
           type="text"
