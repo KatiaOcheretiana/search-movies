@@ -34,10 +34,11 @@ export default function Cast() {
     <CastField>
       {isLoading && <Loader />}
       {error && <h2>Try to reload this page </h2>}
-      <CastList>
-        {cast && cast.length === 0 && <p>We didn't find information</p>}
-        {cast &&
-          cast.map(({ name, character, profile_path, id }) => (
+      {cast && cast.length === 0 && <p>We didn't find information</p>}
+
+      {cast && (
+        <CastList>
+          {cast.map(({ name, character, profile_path, id }) => (
             <Card key={id}>
               <img
                 src={
@@ -52,7 +53,8 @@ export default function Cast() {
               <Info>{character}</Info>
             </Card>
           ))}
-      </CastList>
+        </CastList>
+      )}
     </CastField>
   );
 }
