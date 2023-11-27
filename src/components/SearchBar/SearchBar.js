@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   SearcInput,
   SearchBtn,
@@ -6,17 +7,20 @@ import {
 } from './SearchBar.styled';
 
 export const Searchbar = ({ onSubmit }) => {
+  const [query, setQuery] = useState('');
+
   return (
     <SearchField>
       <SearchForm
         onSubmit={e => {
           e.preventDefault();
-          const searchQuery = e.target.elements.itemToSearch.value;
-          onSubmit(searchQuery);
+          onSubmit(query);
         }}
       >
         <SearcInput
+          onChange={e => setQuery(e.target.value)}
           name="itemToSearch"
+          value={query}
           required
           type="text"
           autoComplete="off"
