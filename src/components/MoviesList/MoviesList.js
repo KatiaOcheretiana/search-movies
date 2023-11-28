@@ -1,8 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { List, ListField, ListItem, Title } from './MoviesList.styled';
-
-const defaultImg =
-  'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
+import defaultImg from '../../images/default-image.jpg';
 
 export const MoviesList = ({ data }) => {
   const location = useLocation();
@@ -19,7 +17,11 @@ export const MoviesList = ({ data }) => {
                     ? `https://image.tmdb.org/t/p/w500/${poster_path}`
                     : defaultImg
                 }
-                width={200}
+                style={{
+                  objectFit: 'cover',
+                  width: '200px',
+                  height: '300px',
+                }}
                 alt="poster"
               />
               <Title>{title}</Title>

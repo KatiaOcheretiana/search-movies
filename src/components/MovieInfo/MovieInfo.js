@@ -1,8 +1,6 @@
 import { getYear, parse } from 'date-fns';
 import { CommonInfoContent, CommonInfoField } from './MovieInfo.styled';
-
-const defaultImg =
-  'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
+import defaultImg from '../../images/default-image.jpg';
 
 export const MovieInfo = ({ data }) => {
   const { poster_path, title, vote_average, overview, genres, release_date } =
@@ -20,7 +18,7 @@ export const MovieInfo = ({ data }) => {
               ? `https://image.tmdb.org/t/p/w500/${poster_path}`
               : defaultImg
           }
-          width={240}
+          style={{ objectFit: 'cover', width: '240px', height: '338.3px' }}
           alt="poster"
         />
         <CommonInfoContent>

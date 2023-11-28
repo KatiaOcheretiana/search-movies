@@ -3,9 +3,7 @@ import { Loader } from 'components/Loader';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Card, CastField, CastList, Info } from './Cast.styled';
-
-const defaultImg =
-  'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
+import defaultImg from '../../images/default-avatar.webp';
 
 export default function Cast() {
   const [cast, setCast] = useState(null);
@@ -46,7 +44,7 @@ export default function Cast() {
                     ? `https://image.tmdb.org/t/p/w500/${profile_path}`
                     : defaultImg
                 }
-                width={180}
+                style={{ objectFit: 'cover', width: '180px', height: '270px' }}
                 alt="cast"
               />
               <Info>{name}</Info>
