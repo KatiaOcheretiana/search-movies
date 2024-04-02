@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import 'modern-normalize';
 
 export const GlobalStyle = createGlobalStyle`
@@ -60,4 +60,27 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+`;
+
+export const Container = styled.div`
+  @media screen and (min-width: 320px) {
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 375px) {
+    width: 375px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+    padding: 0 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 1440px;
+    padding: 0 60px;
+  }
 `;

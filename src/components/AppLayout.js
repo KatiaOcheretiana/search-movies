@@ -1,4 +1,4 @@
-import { GlobalStyle } from './GlobalStyle';
+import { Container, GlobalStyle } from './GlobalStyle';
 import { Toaster } from 'react-hot-toast';
 import { Outlet } from 'react-router-dom';
 import { HeaderField, List, StyledLink } from './AppLayout.styled';
@@ -7,7 +7,7 @@ import { Loader } from './Loader';
 
 export const AppLayout = () => {
   return (
-    <div>
+    <Container>
       <HeaderField>
         <nav>
           <List>
@@ -28,6 +28,6 @@ export const AppLayout = () => {
       </main>
       <Toaster />
       <GlobalStyle />
-    </div>
+    </Container>
   );
 };

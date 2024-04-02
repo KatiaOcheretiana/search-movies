@@ -2,18 +2,23 @@ import styled from 'styled-components';
 
 export const ListField = styled.div`
   margin: 20px 30px;
-  display: flex;
+  /* display: flex; */
 `;
 
 export const List = styled.ul`
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
+  gap: 20px; */
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
+  justify-content: center;
 `;
 
 export const ListItem = styled.li`
   padding: 10px;
-  width: 220px;
+  width: 100%;
   font-size: 18px;
   font-weight: 400;
   line-height: 1.333;

@@ -19,8 +19,6 @@ export const MoviesList = ({ data }) => {
                 }
                 style={{
                   objectFit: 'cover',
-                  width: '200px',
-                  height: '300px',
                 }}
                 alt="poster"
               />
