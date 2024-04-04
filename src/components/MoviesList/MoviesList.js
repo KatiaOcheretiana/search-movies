@@ -1,5 +1,11 @@
 import { Link, useLocation } from 'react-router-dom';
-import { List, ListField, ListItem, Title } from './MoviesList.styled';
+import {
+  LinkCard,
+  List,
+  ListField,
+  ListItem,
+  Title,
+} from './MoviesList.styled';
 import defaultImg from '../../images/default-image.jpg';
 
 export const MoviesList = ({ data }) => {
@@ -10,7 +16,7 @@ export const MoviesList = ({ data }) => {
       <List>
         {data.map(({ id, title, poster_path }) => (
           <ListItem key={id}>
-            <Link to={`/movies/${id}`} state={{ from: location }}>
+            <LinkCard to={`/movies/${id}`} state={{ from: location }}>
               <img
                 src={
                   poster_path
@@ -23,7 +29,7 @@ export const MoviesList = ({ data }) => {
                 alt="poster"
               />
               <Title>{title}</Title>
-            </Link>
+            </LinkCard>
           </ListItem>
         ))}
       </List>

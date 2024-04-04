@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const ListField = styled.div`
@@ -14,6 +15,11 @@ export const List = styled.ul`
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
   justify-content: center;
+`;
+
+export const LinkCard = styled(Link)`
+  text-decoration: none;
+  color: white;
 `;
 
 export const ListItem = styled.li`
@@ -39,4 +45,5 @@ export const ListItem = styled.li`
 export const Title = styled.p`
   font-weight: 700;
   margin: 10px 0;
+  text-align: center;
 `;
