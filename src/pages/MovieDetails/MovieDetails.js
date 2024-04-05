@@ -10,6 +10,7 @@ import {
   LinkText,
 } from './MovieDetails.styled';
 import { FcReading, FcPortraitMode, FcUpLeft, FcInfo } from 'react-icons/fc';
+import { Container } from 'components/GlobalStyle';
 
 export default function MovieDetails() {
   const [details, setDetails] = useState(null);
@@ -38,7 +39,7 @@ export default function MovieDetails() {
   }, [movieId]);
 
   return (
-    <div>
+    <Container>
       {isLoading && <Loader />}
       {details && (
         <div>
@@ -75,6 +76,6 @@ export default function MovieDetails() {
       )}
 
       <Outlet />
-    </div>
+    </Container>
   );
 }

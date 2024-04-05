@@ -1,29 +1,45 @@
 import styled from 'styled-components';
 
 export const SearchField = styled.div`
-  justify-content: left;
+  display: grid;
+  width: 100%;
   align-items: center;
-  height: 70px;
-  padding: 22px 34px;
+  align-content: center;
+
+  margin-bottom: 50px;
 `;
 
 export const SearchForm = styled.form`
-  display: flex;
+  display: grid;
+
   gap: 10px;
-  align-items: center;
-  width: 100%;
+
   max-width: 600px;
   border-radius: 3px;
   overflow: hidden;
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 3fr 1fr;
+
+    gap: 20px;
+  }
 `;
 
 export const SearchBtn = styled.button`
-  display: inline-block;
-  width: 80px;
-  height: 36.2px;
+  display: flex;
+  gap: 5px;
+  color: white;
+
   border: 0;
   background-size: 40%;
   background-repeat: no-repeat;
+  background-color: rgba(106, 90, 255, 0.7);
+  border-radius: 200px;
+  padding: 15px 20px;
+
+  align-items: center;
+  justify-content: center;
+
   background-position: center;
   opacity: 0.6;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -39,14 +55,19 @@ export const SearchBtn = styled.button`
 export const SearcInput = styled.input`
   display: inline-block;
   width: 100%;
-  font: inherit;
+
+  color: white;
+  background-color: black;
+
   font-size: 20px;
   border: 2px solid rgba(3, 102, 214);
   outline: none;
-  padding: 5px 10px;
+  padding: 10px 15px;
+
+  border: 4px solid rgba(106, 90, 255, 0.7);
+  border-radius: 20px;
 
   &::placeholder {
-    font: inherit;
     font-size: 16px;
   }
 `;

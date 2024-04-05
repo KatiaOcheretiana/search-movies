@@ -18,7 +18,8 @@ export const BackLink = styled(Link)`
 
 export const LinkText = styled.b`
   font-size: medium;
-  color: black;
+  color: white;
+
   box-shadow: rgba(3, 102, 214, 0.3) 0px 3px, rgba(3, 102, 214, 0.2) 0px 5px,
     rgba(3, 102, 214, 0.1) 0px 7px;
 `;

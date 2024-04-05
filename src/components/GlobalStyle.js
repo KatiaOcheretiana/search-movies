@@ -47,8 +47,7 @@ img {
 
 body {
   margin: 0 ;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-family: "Inter", sans-serif;
   color: white;
   background-color: black;
   -webkit-font-smoothing: antialiased;
@@ -67,16 +66,17 @@ export const Container = styled.div`
   @media screen and (min-width: 320px) {
     width: 100%;
     padding: 0 20px;
-    margin: 0 auto;
+    margin: 90px auto;
   }
 
   @media screen and (min-width: 375px) {
-    width: 375px;
+    width: 100%;
   }
 
   @media screen and (min-width: 768px) {
-    width: 768px;
+    /* width: 768px; */
     padding: 0 32px;
+    margin: 120px auto;
   }
 
   @media screen and (min-width: 1440px) {

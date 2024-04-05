@@ -3,6 +3,8 @@ import { Loader } from 'components/Loader';
 import { MoviesList } from 'components/MoviesList/MoviesList';
 import { useEffect, useState } from 'react';
 import { FcFilmReel } from 'react-icons/fc';
+import { Title } from './Home.styled';
+import { Container } from 'components/GlobalStyle';
 
 export default function Home() {
   const [movies, setMovies] = useState([]);
@@ -26,18 +28,18 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <Container>
       {isLoading ? (
         <Loader />
       ) : (
         <div>
-          <h1 style={{ marginLeft: 30, marginTop: 20 }}>
+          <Title>
             Trending today <FcFilmReel />
-          </h1>
+          </Title>
           <MoviesList data={movies} />
         </div>
       )}
       {error && <h2>Try to reload this page </h2>}
-    </>
+    </Container>
   );
 }

@@ -1,18 +1,12 @@
 import { useLocation } from 'react-router-dom';
-import {
-  LinkCard,
-  List,
-  ListField,
-  ListItem,
-  Title,
-} from './MoviesList.styled';
+import { LinkCard, List, ListItem, Title } from './MoviesList.styled';
 import defaultImg from '../../images/default-image.jpg';
 
 export const MoviesList = ({ data }) => {
   const location = useLocation();
 
   return (
-    <ListField>
+    <>
       <List>
         {data.map(({ id, title, poster_path }) => (
           <ListItem key={id}>
@@ -33,6 +27,6 @@ export const MoviesList = ({ data }) => {
           </ListItem>
         ))}
       </List>
-    </ListField>
+    </>
   );
 };

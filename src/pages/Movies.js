@@ -5,6 +5,7 @@ import { MoviesList } from 'components/MoviesList/MoviesList';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import { Container } from 'components/GlobalStyle';
 
 export default function Movies() {
   const [movies, setMovies] = useState([]);
@@ -44,10 +45,10 @@ export default function Movies() {
   };
 
   return (
-    <>
+    <Container>
       <Searchbar onSubmit={handleSearch} />
       {isLoading ? <Loader /> : <MoviesList data={movies} />}
       {error && <h2>Try to reload this page </h2>}
-    </>
+    </Container>
   );
 }
