@@ -37,3 +37,11 @@ export const getMoviesReviews = async movieId => {
   );
   return response.data.results;
 };
+
+export const getTrailer = async movieId => {
+  const { data } = await axios.get(
+    `movie/${movieId}/videos?language=en-US&api_key=${apiKey}`
+  );
+
+  return data.results.filter(v => v.name === 'Official Trailer')[0];
+};

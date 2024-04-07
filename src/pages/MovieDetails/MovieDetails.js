@@ -2,11 +2,13 @@ import { getMoviesDetails } from 'api';
 import { Loader } from 'components/Loader';
 import { MovieInfo } from 'components/MovieInfo/MovieInfo';
 import { useEffect, useRef, useState } from 'react';
-import { NavLink, Outlet, useParams, useLocation } from 'react-router-dom';
+import { Outlet, useParams, useLocation } from 'react-router-dom';
 import {
   AdditionalField,
   AdditionalItem,
   BackLink,
+  LinkList,
+  LinkNav,
   LinkText,
 } from './MovieDetails.styled';
 import { FcReading, FcPortraitMode, FcUpLeft, FcInfo } from 'react-icons/fc';
@@ -44,7 +46,7 @@ export default function MovieDetails() {
       {details && (
         <div>
           <BackLink to={backLinkRef.current.state?.from ?? '/'}>
-            <FcUpLeft style={{ width: 40, height: 20, marginTop: 30 }} />
+            <FcUpLeft style={{ width: 40, height: 20 }} />
             <LinkText> Go back</LinkText>
           </BackLink>
           <MovieInfo data={details} />
@@ -58,20 +60,26 @@ export default function MovieDetails() {
             <FcInfo />
             Additional information
           </p>
-          <ul>
+          <LinkList>
             <AdditionalItem>
-              <NavLink to="cast">
+              <LinkNav to="cast">
                 <FcPortraitMode />
                 Cast
-              </NavLink>
+              </LinkNav>
             </AdditionalItem>
             <AdditionalItem>
-              <NavLink to="reviews">
+              <LinkNav to="reviews">
                 <FcReading />
                 Reviews
-              </NavLink>
+              </LinkNav>
             </AdditionalItem>
-          </ul>
+            <AdditionalItem>
+              <LinkNav to="trailer">
+                <FcReading />
+                Trailer
+              </LinkNav>
+            </AdditionalItem>
+          </LinkList>
         </AdditionalField>
       )}
 

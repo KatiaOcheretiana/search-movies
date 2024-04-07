@@ -2,7 +2,7 @@ import { getMoviesCredits } from 'api';
 import { Loader } from 'components/Loader';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Card, CastField, CastList, Info } from './Cast.styled';
+import { Card, CastList, Info } from './Cast.styled';
 import defaultImg from '../../images/default-avatar.webp';
 
 export default function Cast() {
@@ -29,7 +29,7 @@ export default function Cast() {
   }, [movieId]);
 
   return (
-    <CastField>
+    <>
       {isLoading && <Loader />}
       {error && <h2>Try to reload this page </h2>}
       {cast && cast.length === 0 && <p>We didn't find information</p>}
@@ -44,7 +44,6 @@ export default function Cast() {
                     ? `https://image.tmdb.org/t/p/w500/${profile_path}`
                     : defaultImg
                 }
-                style={{ objectFit: 'cover', width: '180px', height: '270px' }}
                 alt="cast"
               />
               <Info>{name}</Info>
@@ -53,6 +52,6 @@ export default function Cast() {
           ))}
         </CastList>
       )}
-    </CastField>
+    </>
   );
 }

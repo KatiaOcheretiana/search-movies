@@ -19,7 +19,6 @@ export const MovieInfo = ({ data }) => {
 
   const backdropSrc = `https://image.tmdb.org/t/p/w500/${backdrop_path}`;
 
-  console.log(backdropSrc);
   return (
     <CommonInfoField $backdropSrc={backdropSrc}>
       <img
